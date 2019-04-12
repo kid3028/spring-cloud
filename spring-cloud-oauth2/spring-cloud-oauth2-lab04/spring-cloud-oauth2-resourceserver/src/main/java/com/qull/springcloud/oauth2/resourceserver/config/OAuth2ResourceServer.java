@@ -1,5 +1,6 @@
 package com.qull.springcloud.oauth2.resourceserver.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -21,6 +22,9 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 @EnableResourceServer
 public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
 
+    @Autowired
+    private CustomAccessTokenConverter customAccessTokenConverter;
+
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().anyRequest().authenticated()
@@ -37,6 +41,7 @@ public class OAuth2ResourceServer extends ResourceServerConfigurerAdapter {
     @Bean
     public JwtAccessTokenConverter accessTokenConverter() {
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+        converter.setAccessTokenConverter(customAccessTokenConverter);
         converter.setSigningKey("test-secret");
         return converter;
     }
