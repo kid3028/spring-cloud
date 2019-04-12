@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springcloud
+    username: root
+    password: 123456
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+  redis:
+    host: localhost
+    password:
+
+logging:
+  level:
+    root: debug
+
+#config:
+#  oauth2:
+#    privateKey: |
+#                -----BEGIN PRIVATE KEY-----
+#                MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBALphWDlsCELYQ+uy
+#                lm20ZsyLmHlIIkfQQB5/h/FrAyvOJCIITomJbRC1qWRmXmYJa0GISPyeN/C6iqiG
+#                Q6HG020KZvOk1qwn8cmbQAb8c+hDXRf02SaNQzUsjQzyEw9c4+uXw/5S151s/99Q
+#                Y8LHfvwOTxfuYkzn/VHwJW8Av48NAgMBAAECgYATnUT8ngrshff36Q59sxuScSp1
+#                sQqyhg8JZqB23q0xwfr5fehN/yF0Pbn67+8FS/52ohIUS85VTjxjaeXaM6NySzwk
+#                bfBezo8AIcC1dJZw9Ei46IixKvu7YqTF0371I2b6IgbqW4DLsKEHcL+IWcp37CwH
+#                44ZcDGLtpO7OSrjJXQJBAOTv7WZJCJNkyVMPJ7ZXvVl1K7X3OcI7gBYTep+UrF+c
+#                yzwc4iG1jUHmz6RAhWj2rVqu0041Aha+wPSOQyS2uzMCQQDQaZArl/eUe9PAAyw1
+#                JrBckv2bbnaV6yZ31BV8XtAtCzxhs349tdI0DbzfEGFcf2jrhuCcO7WwNeqzfc/J
+#                zoy/AkEAgWWi9vc8o6KJsCqWtZdt7IwvgpAT01ayFMg5vMzZiMkkjft9TLRC/Qaq
+#                Qho9zY/vd5vszv1jCtwST6fBB5VIxQJBAMhcRCL01SrlpJvbMPvkNva4xaFRICZe
+#                zDu1I/bOO/qh66nN4ta23t/2ORaF6+P+BUMxBuyMJs7B9uIaWNIdhYcCQQCCP/bv
+#                IlN/IF54WjO9EvnNWhH3zSLViZyslV/pnYn1OGtt2k1riI7YmwoGX5vCa9MlWHdV
+#                dE1YgLiUozVh2XSv
+#                -----END PRIVATE KEY-----
+#
+#    publicKey: |
+#                -----BEGIN PUBLIC KEY-----
+#                MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC6YVg5bAhC2EPrspZttGbMi5h5
+#                SCJH0EAef4fxawMrziQiCE6JiW0QtalkZl5mCWtBiEj8njfwuoqohkOhxtNtCmbz
+#                pNasJ/HJm0AG/HPoQ10X9NkmjUM1LI0M8hMPXOPrl8P+UtedbP/fUGPCx378Dk8X
+#                7mJM5/1R8CVvAL+PDQIDAQAB
+#                -----END PUBLIC KEY-----
