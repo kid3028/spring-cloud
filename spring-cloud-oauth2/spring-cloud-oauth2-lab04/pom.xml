@@ -4,22 +4,23 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.qull</groupId>
-        <artifactId>spring-cloud</artifactId>
+        <artifactId>spring-cloud-oauth2</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>spring-cloud-oauth2</artifactId>
+    <artifactId>spring-cloud-oauth2-lab04</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>spring-cloud-oauth2</name>
+    <name>spring-cloud-oauth2-lab04</name>
     <description>Demo project for Spring Boot</description>
 
-    <modules>
-        <module>spring-cloud-oauth2-lab01</module>
-        <module>spring-cloud-oauth2-lab02</module>
-        <module>spring-cloud-oauth2-lab03</module>
-        <module>spring-cloud-oauth2-lab04</module>
-    </modules>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
 
+    <modules>
+        <module>spring-cloud-oauth2-authorizationserver</module>
+        <module>spring-cloud-oauth2-resourceserver</module>
+    </modules>
     <build>
         <plugins>
             <plugin>
