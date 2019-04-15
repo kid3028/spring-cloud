@@ -1,0 +1,314 @@
+{
+	"id": "8f65e760-c7d7-4be7-832f-89704ec60a7d",
+	"name": "OAuth2",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"13b1a1e2-f2bf-41fd-ba80-22bc660edb9e",
+		"6af350e2-a234-4b0b-9bf9-0eccc48d0e75",
+		"51d50be0-081e-455d-aea8-d09557b20169",
+		"5f2132f9-ecc3-4f2d-a91e-99c6c72f524e",
+		"a842de52-806d-4461-b998-36cdcc99cfc1",
+		"2b2b539e-58c5-4688-84b1-ce57898bc995"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "13b1a1e2-f2bf-41fd-ba80-22bc660edb9e",
+			"name": "通过授权码获取token",
+			"url": "localhost:8080/oauth/token",
+			"description": "",
+			"data": [
+				{
+					"key": "redirect_uri",
+					"value": "http://www.baidu.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "qull",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "qull",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "authorization_code",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "code",
+					"value": "0T45TL",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "noauth"
+			},
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "2b2b539e-58c5-4688-84b1-ce57898bc995",
+			"name": "简化模式获取token",
+			"url": "http://localhost:8080/oauth/authorize?response_type=token&client_id=qull&redirect_uri=http://www.baidu.com",
+			"description": "",
+			"data": [
+				{
+					"key": "response_type",
+					"value": "token",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "qull",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "qull",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "redirect_uri",
+					"value": "http://www.baidu.com",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "implict",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "response_type",
+					"value": "token",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "qull",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "redirect_uri",
+					"value": "http://www.baidu.com",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "51d50be0-081e-455d-aea8-d09557b20169",
+			"name": "刷新token",
+			"url": "localhost:8080/oauth/token",
+			"description": "",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "refresh_token",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "refresh_token",
+					"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJxdWxsIiwiYXV0aG9yIjoiSSdtIHF1bGwiLCJzY29wZSI6WyJyZWFkIl0sImF0aSI6IjA1OTZmYmU3LTQzZGQtNDBlNy05NjNlLTI5YjZkY2FjZTQ2MiIsImV4cCI6MTU1Nzg5OTYxMCwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImp0aSI6IjdmYWFjNTkzLTI0NmYtNDA2Yi05ODg1LTNhZDlmOGJkODliNSIsImNsaWVudF9pZCI6InF1bGwifQ.TrNCkyBxKomq9bNx72vTOVlFc9xAsN_HaDang71JSmhsddd-lLWEXGnsSVXIRkfGFeBozKXXF_caqwxjiro_i5VvGoBvYrPXMlijTpikaU1dOjGHRByMpZBYhi1AF_kSFLfh4YKspaUJoJ8FrcN7XIpx-_djjVlDen6BH0FMc_Ky2mM4qcKcYvw1c1NlX-ELNlnejKzlDAi1QrPgPyJ6hAxLJVphjgVBVwZCvtL25xu-7ngLChgKpa7_foMalW_3rvInQZx-ewBERlDt4lHVvu-7Rf-aYf-rFDrHTY6bmlGnKJVA4JWbJakSaJa9dK0dw1VyvGzbBJGbo6vzMlBGfw",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "qull",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "qull",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "5f2132f9-ecc3-4f2d-a91e-99c6c72f524e",
+			"name": "客户端模式",
+			"url": "localhost:8080/oauth/token",
+			"description": "",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "client_credentials",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "qull",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "qull",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "6af350e2-a234-4b0b-9bf9-0eccc48d0e75",
+			"name": "访问受保护资源",
+			"url": "localhost:8080/api/userinfo",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTUwOTYxNDIsInVzZXJfbmFtZSI6InF1bGwiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiZWUxYjkzYmMtZTYwMi00NzE1LWFlNmEtNDEzMjZkNzk1MzQ4IiwiY2xpZW50X2lkIjoicXVsbCIsInNjb3BlIjpbInJlYWQiXX0.h_KkxxsPsb8XzFcoAspbWN21xudZX1GWk2HYYarTqDg",
+						"type": "string"
+					}
+				]
+			},
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "a842de52-806d-4461-b998-36cdcc99cfc1",
+			"name": "密码模式",
+			"url": "localhost:8080/oauth/token",
+			"description": "",
+			"data": [
+				{
+					"key": "grant_type",
+					"value": "password",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "username",
+					"value": "qull",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "qull",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "qull",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "client_secret",
+					"value": "qull",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		}
+	]
+}
